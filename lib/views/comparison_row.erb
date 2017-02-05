@@ -1,0 +1,44 @@
+
+<!-- begin comparison row -->
+<tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+  <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+    <table width="100%" cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+      <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; ">
+        <td style="border-top-width: 1px; border-top-color: #eee; border-top-style: solid">
+          <strong><%= @data[:row_comparison_label] %></strong>
+        </td>
+        <td class="alignright" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; text-align: right; border-top-width: 1px; border-top-color: #eee; border-top-style: solid; margin: 0; padding: 5px 0;" align="right" valign="top">
+          <%= @data[:row_current_value] %>
+        </td>
+      </tr>
+      <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+        <td>
+          Previous
+        </td>
+        <td class="alignright" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; text-align: right; margin: 0; padding: 5px 0;" align="right" valign="top">
+          <%= @data[:row_previous_value] %>
+        </td>
+      </tr>
+    </table>
+    <table height="4px" width="100%" cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 3px; line-height: 3px; height: 3px; margin: 0;">
+      <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; font-size: 3px; line-height: 3px; height: 3px;">
+        <% if @data[:row_comparison_sign] == :negative %>
+          <td width="<%= @data[:row_compare_percent] %>%" style="background-color: <%= @opts[:scale_green] %>; font-size: 3px; line-height: 3px; height: 3px;">
+          &nbsp;
+        </td>
+        <td width="<%= 100 - @data[:row_compare_percent] %>%" style="background-color: <%= @opts[:scale_red] %>; font-size: 3px; line-height: 3px; height: 3px;">
+          <% puts ' ' if @data[:row_compare_percent] < 100 %>
+        </td>
+      <% else %>
+          <td width="<%= 100 - @data[:row_compare_percent] %>%" style="background-color: <%= @opts[:scale_green] %>">
+          <% puts ' ' if @data[:row_compare_percent] < 100 %>
+        </td>
+        <td width="<%= @data[:row_compare_percent] %>%" style="background-color: <%= @opts[:scale_blue] %>">
+          &nbsp;
+        </td>
+      <% end %>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- end comparison row -->
