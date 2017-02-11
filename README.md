@@ -22,7 +22,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+e = Stationerb::Builder.new
+e.add_hero "This is a sample email", "Additional content goes here"
+e.add_row "A Header", "lorem ipsum dolor ..."
+e.add_row "A Second Header", "<div>html works too</div>"
+e.add_footer "Sample Email", "https://sample.tld", [{:label =>
+'Something', :value => 'or another'}, { :label => '', :value => ''}]
+e.add_comparison_row "a measurement", 15, 14
+e.add_comparison_row "a negative measurement", 19, 91
+
+email = e.generate('subject')
+```
+
+### Configuring
+
+
 
 ## Development
 
