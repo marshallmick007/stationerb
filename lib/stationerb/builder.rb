@@ -48,6 +48,10 @@ module Stationerb
       @rows << render("standard_row")
     end
 
+    def add_prerendered_row(rendered_row)
+      @rows << rendered_row
+    end
+
     def add_comparison_row(title, current, previous)
       @data = {
         :row_comparison_label => title,
