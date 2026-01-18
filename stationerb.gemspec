@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["gems@0x07.com"]
 
   spec.summary       = %q{Simple html email generator using ERB.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/marshallmick007/stationerb"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
