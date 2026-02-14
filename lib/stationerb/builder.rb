@@ -133,7 +133,7 @@ module Stationerb
 
     def has_user_view?(file)
       if Stationerb.configuration.views
-        return File.exists? get_user_view_path(file)
+        return File.exist? get_user_view_path(file)
       end
       false
     end
